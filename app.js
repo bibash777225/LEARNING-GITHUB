@@ -1,37 +1,14 @@
 
 const express= require("express")
-const app = express()
-//  app vaneko indireclty express lai call garya hoo
+const bookRoute=require("./routes/bookRoute")
+
 require("./database/connection")
 
-app.get("/books",(req,res)=>{
-    res.json({
-        name:"get the book sucesfully",
-        
-    })
-})
+ app.use=(express.json())
+app.use("",bookRoute)
+const app = express()
 
-
-app.post("/books", (req,res)=>{
-    res.json({
-        name:"book post sucessfully"
-     
-    })
-})
-
-app.patch("/books/:id", (req,res)=>{
-    res.json({
-        name:"book patch successfully enjoy"
-        
-    })
-})
-
-app.delete("/books/:id", (req,res)=>{
-    res.json({
-        name:"books deleted sucessfully"
-        
-    })
-})
+//  app vaneko indireclty express lai call garya hoo
 
 
 
@@ -43,7 +20,10 @@ app.delete("/books/:id", (req,res)=>{
 
 
 
-app.listen(3000, function()
+
+
+
+app.listen(4000, function()
 {
     console.log("succesfully connected at port no 3000");
   

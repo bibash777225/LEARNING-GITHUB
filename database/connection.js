@@ -19,11 +19,16 @@
     const db={}
     db.sequelize=sequelize;
     db.Sequelize=Sequelize;
+        
+  
 
-    db.book=require("../models/book.modle")(sequelize,DataTypes)
+    db.book=require("../models/book.model")(sequelize,DataTypes)
+
     sequelize.sync({alert:false})
     .then(()=>
     {
 console.log('MIGRATE VAYOU HAI TAH SATHI')
     })
-      module.eport=db
+    //  migration code 
+    
+      module.export=db
